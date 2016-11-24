@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements Callback<Tngou> {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         Service service = retrofit.create(Service.class);
-        Call<Tngou> call = service.getList("cook", 0, 1, 50);
+        Call<Tngou> call = service.postList("cook", 0, 1, 5);
         call.enqueue(this);
         ListView listView = (ListView) findViewById(R.id.main_list);
         adapter = new MyAdapter(this, new ArrayList<Cook>());

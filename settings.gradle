@@ -1,1 +1,1 @@
-include ':networtdemo', ':jsondemo'
+include ':networtdemo', ':jsondemo', ':xmldemo'
