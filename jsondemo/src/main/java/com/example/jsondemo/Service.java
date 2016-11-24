@@ -2,6 +2,7 @@ package com.example.jsondemo;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -10,7 +11,8 @@ import retrofit2.http.Query;
 
 public interface Service {
     @GET("/api/{category}/list")
-    Call<Tngou> getList(@Query("id") int id,
+    Call<Tngou> getList(@Path("category") String category,
+                        @Query("id") int id,
                         @Query("page") int page,
                         @Query("rows") int rows);
 }
